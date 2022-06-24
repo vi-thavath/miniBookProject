@@ -2,24 +2,29 @@ import React from "react";
 import ReactDOM from "react-dom";
 
 function People() {
-  const btn = "search button";
-  const name = "john";
-  const lastName = "doe";
+  const friends = [
+    { name: "John", job: "developer", age: "24", company: "apple" },
+    { name: "Jane", job: "designer", age: "23", company: "meta" },
+    { name: "Jason", job: "Engineer", age: "25", company: "alphabet" },
+  ];
   return (
     <section className="person">
       {/* MUST BE AN EXPRESSION */}
-      <Person name="john" job="developer" />
-      <Person name="Jason" job="designer" />
-      <Person name="Jame" job="dean" />
-      <Person name="John" job="engineer" />
+      <Person person={friends[0]} />
+      <Person person={friends[1]} />
+      <Person person={friends[2]} />
     </section>
   );
 }
 const Person = (props) => {
+  // console.log(props);
+  const { name, job, age, company } = props.person;
   return (
     <div>
-      <h1>{props.name}</h1>
-      <p>{props.job}</p>
+      <h1>{name}</h1>
+      <p>{job}</p>
+      <p>{age}</p>
+      <p>{company}</p>
     </div>
   );
 };
