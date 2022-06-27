@@ -26,3 +26,9 @@
 .person:hover {
   box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.3);
 }
+.book {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-column-gap: 1rem;
+  margin: 2rem 0;
+}

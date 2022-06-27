@@ -11,18 +11,12 @@ class Booklist extends Component {
     };
   }
 
-  // state = {
-  //   books: booksData,
-  // };
-  //this.setState({})
   render() {
-    const example = this.state.books.map((item) => <p>{item.book} </p>);
-    // console.log(example);
     return (
       <div>
-        <h2>Hello from booklist</h2>
-        {this.state.books.map((item) => (
-          <Book key={item.id} info={item} />
+        <h2>Best selling books this week</h2>
+        {this.state.books.map((book) => (
+          <Book key={book.id} info={book} />
         ))}
       </div>
     );
