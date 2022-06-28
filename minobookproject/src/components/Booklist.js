@@ -11,12 +11,26 @@ class Booklist extends Component {
     };
   }
 
+  filterData = (id) => {
+    const sortedBooks = this.state.books.filter((item) => item.id !== id);
+    this.setState({
+      books: sortedBooks,
+    });
+  };
+
+  handleClick = () => {
+    console.log(`i'm information from parent container`);
+  };
   render() {
     return (
       <div>
         <h2>Best selling books this week</h2>
         {this.state.books.map((book) => (
-          <Book key={book.id} info={book} />
+          <Book
+            key={book.id}
+            info={book}
+            deleteItem={() => this.filterData(book.id)}
+          />
         ))}
       </div>
     );
