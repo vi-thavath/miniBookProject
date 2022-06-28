@@ -7,9 +7,14 @@ class Book extends Component {
     this.state = {
       count: 0,
       name: "john",
+      showInfo: true,
     };
   }
-
+  handleInfo = () => {
+    this.setState({
+      showInfo: !this.state.showInfo,
+    });
+  };
   addCount = () => {
     console.log(this.state.count);
     this.setState({
@@ -37,6 +42,13 @@ class Book extends Component {
     const { img, title, author } = this.props.info;
     // const { handleClick } = this.props;
     const { deleteItem } = this.props;
+    const checkInfo = (info) => {
+      if (info == true) {
+        return <p>Lorem ipsum dolor sit amet.</p>;
+      } else {
+        return null;
+      }
+    };
     // console.log(handleClick);
     return (
       <div className="book">
@@ -45,6 +57,8 @@ class Book extends Component {
           <h4>TITLE:{title}</h4>
           <h6>BY:{author}</h6>
           <button onClick={deleteItem}>delete item</button>
+          <button onClick={this.handleInfo}>Show Info</button>
+          {checkInfo(this.state.showInfo)}
         </div>
       </div>
     );

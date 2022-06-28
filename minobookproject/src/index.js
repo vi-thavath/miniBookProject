@@ -7,8 +7,8 @@ import People from "./Person";
 import Book from "./book";
 import reportWebVitals from "./reportWebVitals";
 
-ReactDOM.render(<Book />, document.getElementById("root"));
-ReactDOM.render(<People />, document.getElementById("person"));
+// ReactDOM.render(<Book />, document.getElementById("root"));
+// ReactDOM.render(<People />, document.getElementById("person"));
 ReactDOM.render(<App />, document.getElementById("app"));
 
 // const root = ReactDOM.createRoot(document.getElementById("root"));
